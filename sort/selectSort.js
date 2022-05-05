@@ -2,13 +2,15 @@
  * @Description  : 选择排序
  * @Author       : ch1lam
  * @Date         : 2022-05-03 18:49:26
- * @LastEditTime : 2022-05-04 14:33:46
+ * @LastEditTime : 2022-05-05 16:18:28
  * @LastEditors  : chilam
  * @FilePath     : \algorithm-practice\sort\selectSort.js
  */
 
+const testArray = [1, 5, 9, 4, 7, 3, 6, 0, 2, 8];
+
 const selectSort = (arr) => {
-  let len = arr.length;
+  const len = arr.length;
   let minIndex;
   for (let i = 0; i < len - 1; i++) {
     minIndex = i;
@@ -24,6 +26,5 @@ const selectSort = (arr) => {
   return arr;
 };
 
-let testArray = [1, 5, 9, 4, 7, 3, 6, 0, 2, 8];
 
 console.log(selectSort(testArray));
