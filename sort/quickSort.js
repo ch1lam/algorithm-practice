@@ -2,11 +2,11 @@
  * @Description  : 快速排序
  * @Author       : ch1lam
  * @Date         : 2022-05-04 14:30:34
- * @LastEditTime : 2022-05-05 01:33:35
+ * @LastEditTime : 2022-05-05 17:19:25
  * @LastEditors  : chilam
  * @FilePath     : \algorithm-practice\sort\quickSort.js
  */
-let testArray = [1, 5, 9, 4, 7, 3, 6, 0, 2, 8];
+const testArray = [1, 5, 9, 4, 7, 3, 6, 0, 2, 8];
 
 const swap = (arr, i, j) => {
   [arr[i], arr[j]] = [arr[j], arr[i]];
@@ -18,13 +18,13 @@ const swap = (arr, i, j) => {
 const quickSort = (arr) => {
   const left = [];
   const right = [];
-  const pivot = arr.shift();
+  const pivot = arr[0];
 
   if (arr.length < 2) return arr;
 
-  arr.forEach((element) => {
-    element < pivot ? left.push(element) : right.push(element);
-  });
+  for (let i = 1; i < arr.length; i++) {
+    arr[i] < pivot ? left.push(arr[i]) : right.push(arr[i]);
+  }
 
   return quickSort(left).concat(pivot, quickSort(right));
 };
